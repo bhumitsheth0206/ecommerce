@@ -1,0 +1,38 @@
+.card-content {
+    padding: 20px;
+}
+
+.cards {
+    margin: 15px;
+}
+
+.card-media {
+    width: 100%;
+    min-height: 200px;
+}
+
+.card-title {
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    line-height: 18px !important;
+    color: #1976d2;
+}
+
+.card-description {
+    font-family: "Open Sans", sans-serif !important;
+    color: #333333;
+}
+
+.home-buy-book-button {
+    margin-top: 10px !important;
+    background-color: #1976d2 !important;
+    height: 40px !important;
+    border-radius: 3px !important;
+    color: #fff !important;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px !important;
+    line-height: 22px !important;
+    text-align: center !important;
+    font-weight: 400 !important;
+}

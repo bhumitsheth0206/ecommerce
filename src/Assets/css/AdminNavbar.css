@@ -1,0 +1,45 @@
+.link {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+}
+
+.mobile-menu-link {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.log-out-btn {
+    background-color: #fff !important;
+    float: right;
+    color: #1976d2 !important;
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 12px !important;
+    margin-left: 20px !important;
+    padding: 5px !important;
+    border-radius: 4px !important;
+}
+
+.mobile-menu-log-out-btn {
+    background-color: #1976d2 !important;
+    float: right;
+    color: #fff !important;
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 12px !important;
+    width: 100px;
+    margin-right: 60px !important;
+}
+
+.success-btn {
+    background-color: green !important;
+    color: white !important;
+}
+
+.error-btn {
+    background-color: red !important;
+    color: white !important;
+    margin-left: 5px !important;
+}

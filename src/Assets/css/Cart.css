@@ -1,0 +1,51 @@
+.minus-btn {
+    background-color: lightblue !important;
+    color: black !important;
+    margin-right: 5px !important;
+}
+
+.plus-btn {
+    background-color: lightblue !important;
+    color: black !important;
+    margin-left: 5px !important;
+}
+
+.btn-div {
+    margin-top: 5px;
+}
+
+.cart-title {
+    text-align: left !important;
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 25px !important;
+    font-weight: 400 !important; 
+    line-height: 18px !important;
+    color: #1976d2 !important;
+}
+
+.cart-empty-title {
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 25px !important;
+    font-weight: 400 !important; 
+    line-height: 18px !important;
+    color: black !important;
+}
+
+.cart-div {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.cart-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 400px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px;
+}
