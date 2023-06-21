@@ -8,7 +8,11 @@ import Navbar from '../Components/Navbar';
 import { cartContents } from '../Interfaces/Cart';
 
 const Order = () => {
-    const userOrderList = useSelector((state: any) => state.eCommerceUser.orders);
+    let userOrderList = useSelector((state: any) => state.eCommerceUser.orders);
+    const loggedInUser = useSelector((state: any) => state.eCommerceUser.user);
+
+    userOrderList = userOrderList.filter((i: cartContents) => i.userId === loggedInUser.id);
+
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
 

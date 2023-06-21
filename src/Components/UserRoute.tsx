@@ -17,7 +17,6 @@ const UserRoute = () => {
                 <Route path="/" element={<Login />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/sign-up" element={<SignUp />} />
-                <Route path="/order" element={<Order />} />
                 <Route path="/admin/user" element={
                     <PrivateAdminRoute>
                         <AdminUser />
@@ -31,6 +30,11 @@ const UserRoute = () => {
                 <Route path="/cart" element={
                     <PrivateUserRoute>
                         <Cart />
+                    </PrivateUserRoute> }
+                />
+                <Route path="/order" element={
+                    <PrivateUserRoute>
+                        <Order />
                     </PrivateUserRoute> }
                 />
             </Routes>

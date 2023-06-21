@@ -31,19 +31,25 @@ const Cart = () => {
             userData.cart.map((i: cartContents) => {
                 const subProduct = subProductList.find((item: subProductContents) => item.id === i.productId);
                 if (subProduct) {
-                    const subProductUpdateData = {
-                        id: subProduct.id,
-                        title: subProduct.title,
-                        quantity: (subProduct.quantity - i.cartQuantity),
-                        price: subProduct.price,
-                        category: subProduct.category,
-                        imageUrl: subProduct.imageUrl,
-                        productId: subProduct.productId
+                    if (subProduct.quantity < i.cartQuantity) {
+                        cartAmount += (subProduct.quantity * i.productPrice);
+                    } else {
+                        const subProductUpdateData = {
+                            id: subProduct.id,
+                            title: subProduct.title,
+                            quantity: (subProduct.quantity - i.cartQuantity),
+                            price: subProduct.price,
+                            category: subProduct.category,
+                            imageUrl: subProduct.imageUrl,
+                            productId: subProduct.productId
+                        }
+                        dispatch(updateSubProduct(subProductUpdateData));
+                        dispatch(orderedItems(i));
+                        cartAmount += (i.cartQuantity * i.productPrice);
+                        
                     }
-                    dispatch(updateSubProduct(subProductUpdateData));
-                    dispatch(orderedItems(i));
+                    
                 }
-                cartAmount += (i.cartQuantity * i.productPrice);
                 return i;
             });
             setAmount(cartAmount);

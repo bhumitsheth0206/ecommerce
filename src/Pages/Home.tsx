@@ -80,40 +80,39 @@ const Home = () => {
             <Box className="card-content">
                 <Grid container>
                     {subProductList.map((i: subProductContents) => {
-                        if (i.quantity > 0) {
-                            return (
-                                <Grid item md={4} key={i.id}>
-                                    <Card className="cards">
-                                        <CardMedia
-                                            className="card-media"
-                                            image={i.imageUrl}
-                                            style={{
-                                                backgroundSize: "100% 100%"
-                                            }}
-                                        />
-                                        <CardContent className="card-contents">
-                                            <Typography gutterBottom variant="h3" className="card-title">
-                                                {i.title}
-                                            </Typography>
-                                            <Typography variant="body2" className="card-description" component="p">
-                                                ₹ {i.price}
-                                            </Typography>
-                                            <Typography variant="body2" className="card-quantity" component="p">
-                                                Quantity - {i.quantity}
-                                            </Typography>
-                                            <Button 
-                                                type="submit" 
-                                                variant="contained" 
-                                                className="home-buy-book-button"
-                                                onClick={() => {handleOpen(); setProduct(i);}}
-                                            >
-                                                Buy Product
-                                            </Button>
-                                        </CardContent>
-                                    </Card>
-                                </Grid>
-                            );
-                        } 
+                        return (
+                            <Grid item md={4} key={i.id}>
+                                <Card className="cards">
+                                    <CardMedia
+                                        className="card-media"
+                                        image={i.imageUrl}
+                                        style={{
+                                            backgroundSize: "100% 100%"
+                                        }}
+                                    />
+                                    <CardContent className="card-contents">
+                                        <Typography gutterBottom variant="h3" className="card-title">
+                                            {i.title}
+                                        </Typography>
+                                        <Typography variant="body2" className="card-description" component="p">
+                                            ₹ {i.price}
+                                        </Typography>
+                                        <Typography variant="body2" className="card-quantity" component="p">
+                                            Quantity - {i.quantity}
+                                        </Typography>
+                                        <Button 
+                                            type="submit" 
+                                            variant="contained" 
+                                            className="home-buy-book-button"
+                                            onClick={() => {handleOpen(); setProduct(i);}}
+                                            disabled={i.quantity <= 0}
+                                        >
+                                            Buy Product
+                                        </Button>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        );
                     })}
                 </Grid>
                 <Modal open={open}
