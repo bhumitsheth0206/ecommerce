@@ -80,6 +80,7 @@ const Login = () => {
                         action: 'Logged In',
                         value: parseInt(userData.id)
                     });
+                    console.log('Id login:', parseInt(userData.id));
                     toast.success("User logged-in successfully");
                     navigate('/home');
                 } else {

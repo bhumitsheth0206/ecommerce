@@ -66,8 +66,10 @@ const SignUp = () => {
             console.log('Hello SignUp');
             ReactGA.event({
                 category: 'User',
-                action: 'Created an account'
+                action: 'Created an account',
+                value: parseInt(userData.id)
             });
+            console.log('Id sign-up:', parseInt(userData.id));
             toast.success("User signed up successfully");
             props.resetForm({
                 values: signUpInitialValues,
