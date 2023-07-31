@@ -74,17 +74,18 @@ const Login = () => {
                     }
                     dispatch(loggedInUser(userRecord));
                     dispatch(userLoggedIn());
+                    console.log('Hello Login');
+                    ReactGA.event({
+                        category: 'User',
+                        action: 'Logged In',
+                        value: parseInt(userData.id)
+                    });
                     toast.success("User logged-in successfully");
                     navigate('/home');
                 } else {
                     toast.error("Invalid email or password.");
                 }
             }
-            console.log('Hello Login');
-            ReactGA.event({
-                category: 'User',
-                action: 'Logged In'
-            });
             setShowPassword(false);
             props.resetForm({
                 values: loginInitialValues,

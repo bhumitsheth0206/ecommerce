@@ -7,7 +7,7 @@ import { persistor, store } from "./Redux/store";
 import { ToastContainer } from "react-toastify";
 import UserRoute from "./Components/UserRoute";
 
-ReactGA.initialize('UA-280086515-1');
+ReactGA.initialize('G-M643Q8T8M4');
 
 function App() {
   return (
