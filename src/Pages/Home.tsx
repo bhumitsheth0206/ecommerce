@@ -25,6 +25,7 @@ const Home = () => {
     }
 
     useEffect(() => {
+        console.log('Hello Home');
         ReactGA.pageview(window.location.pathname);
     }, []);
 

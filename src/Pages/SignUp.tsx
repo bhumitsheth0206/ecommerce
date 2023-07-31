@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReactGA from "react-ga";
 import { Box, Button, FormLabel, IconButton, InputAdornment, TextField } from "@material-ui/core";
 import { makeStyles } from '@mui/styles';
 import { useFormik } from "formik";
@@ -58,6 +59,11 @@ const SignUp = () => {
             }
             dispatch(loggedInUser(userData));
             dispatch(addNewUser(userData));
+            console.log('Hello SignUp');
+            ReactGA.event({
+                category: 'User',
+                action: 'Created an account'
+            });
             toast.success("User signed up successfully");
             props.resetForm({
                 values: signUpInitialValues,

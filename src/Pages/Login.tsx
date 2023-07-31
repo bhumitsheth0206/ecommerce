@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import ReactGA from "react-ga";
 import { Box, Button, FormLabel, IconButton, InputAdornment, TextField } from "@mui/material";
 import { makeStyles } from '@mui/styles';
 import { useFormik } from "formik";
@@ -75,7 +76,11 @@ const Login = () => {
                     toast.error("Invalid email or password.");
                 }
             }
-            
+            console.log('Hello Login');
+            ReactGA.event({
+                category: 'User',
+                action: 'Logged In'
+            });
             setShowPassword(false);
             props.resetForm({
                 values: loginInitialValues,
