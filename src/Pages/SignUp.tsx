@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactGA from "react-ga";
 import { Box, Button, FormLabel, IconButton, InputAdornment, TextField } from "@material-ui/core";
 import { makeStyles } from '@mui/styles';
@@ -43,6 +43,10 @@ const SignUp = () => {
         password: "",
         confirmPassword: ""
     };
+
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname);
+    }, []);
 
     const formik = useFormik({
         initialValues: signUpInitialValues,

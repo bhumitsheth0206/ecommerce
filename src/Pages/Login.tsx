@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ReactGA from "react-ga";
 import { Box, Button, FormLabel, IconButton, InputAdornment, TextField } from "@mui/material";
@@ -50,6 +50,10 @@ const Login = () => {
 
     const userList = useSelector((state: any) => state.eCommerceUser.userList);
 
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname);
+    }, []);
+    
     const formik = useFormik({
         initialValues: loginInitialValues,
         validationSchema: LoginSchema,
