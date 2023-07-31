@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from 'react-router-dom';
+import ReactGA from "react-ga";
 import { Box, Button, Card, CardContent, CardMedia, Grid, Modal, Toolbar, Typography } from "@mui/material";
 
 import Navbar from "../Components/Navbar";
@@ -22,6 +23,10 @@ const Home = () => {
     if (title !== null) {
         subProductList = subProductList.filter((i:subProductContents) => i.category === title);
     }
+
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname);
+    }, []);
 
     const [open, setOpen] = useState(false);
     const [product, setProduct] = useState<any>(null);
