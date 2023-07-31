@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import { Box, Button, FormLabel, IconButton, InputAdornment, TextField } from "@material-ui/core";
 import { makeStyles } from '@mui/styles';
 import { useFormik } from "formik";
@@ -45,7 +45,7 @@ const SignUp = () => {
     };
 
     useEffect(() => {
-        ReactGA.pageview(window.location.pathname);
+        ReactGA.send({ hitType: "pageview", page: "/sign-up", title: "Sign Up Page" });
     }, []);
 
     const formik = useFormik({

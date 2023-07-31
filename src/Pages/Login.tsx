@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import { Box, Button, FormLabel, IconButton, InputAdornment, TextField } from "@mui/material";
 import { makeStyles } from '@mui/styles';
 import { useFormik } from "formik";
@@ -51,7 +51,7 @@ const Login = () => {
     const userList = useSelector((state: any) => state.eCommerceUser.userList);
 
     useEffect(() => {
-        ReactGA.pageview(window.location.pathname);
+        ReactGA.send({ hitType: "pageview", page: "/", title: "Login Page" });
     }, []);
     
     const formik = useFormik({

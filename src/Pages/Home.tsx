@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from 'react-router-dom';
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import { Box, Button, Card, CardContent, CardMedia, Grid, Modal, Toolbar, Typography } from "@mui/material";
 
 import Navbar from "../Components/Navbar";
@@ -26,7 +26,7 @@ const Home = () => {
 
     useEffect(() => {
         console.log('Hello Home');
-        ReactGA.pageview(window.location.pathname);
+        ReactGA.send({ hitType: "pageview", page: "/home", title: "Home Page" });
     }, []);
 
     const [open, setOpen] = useState(false);

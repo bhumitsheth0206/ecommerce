@@ -1,6 +1,6 @@
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 import 'react-toastify/dist/ReactToastify.css';
 import { persistor, store } from "./Redux/store";
