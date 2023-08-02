@@ -76,11 +76,10 @@ const Login = () => {
                     dispatch(userLoggedIn());
                     console.log('Hello Login');
                     ReactGA.event({
-                        category: 'User',
+                        category: 'GA User',
                         action: 'Logged In',
-                        value: parseInt(userData.id)
+                        value: 5
                     });
-                    console.log('Id login:', parseInt(userData.id));
                     toast.success("User logged-in successfully");
                     navigate('/home');
                 } else {

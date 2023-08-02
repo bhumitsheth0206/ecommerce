@@ -65,7 +65,7 @@ const SignUp = () => {
             dispatch(addNewUser(userData));
             console.log('Hello SignUp');
             ReactGA.event({
-                category: 'User',
+                category: 'GA User',
                 action: 'Created an account',
                 value: parseInt(userData.id)
             });
